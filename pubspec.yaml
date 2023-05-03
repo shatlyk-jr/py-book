@@ -39,6 +39,9 @@ dependencies:
   webview_flutter_plus: ^0.3.0+2
   photo_view: ^0.14.0
   expansion_tile_card: ^2.0.0
+  flutter_background_service: ^2.4.6
+  flutter_local_notifications: ^14.0.0+1
+  workmanager: ^0.5.1
 
 dev_dependencies:
   flutter_test:
