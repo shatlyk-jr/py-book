@@ -1,6 +1,7 @@
 import 'package:py/pages/alltest.dart';
 
 import '../../import.dart';
+import '../../video/video.dart';
 import '../about/about_us.dart';
 
 class HomePage extends StatefulWidget {
@@ -57,7 +58,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Col.background,
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
         actions: [
           PopupMenuButton(
@@ -95,7 +96,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           SizedBox(
-            height: MediaQuery.of(context).size.height / 3.9,
+            height: MediaQuery.of(context).size.height / 5,
             child: Image.asset('assets/images/python.png'),
           ),
           Expanded(
@@ -120,12 +121,14 @@ class _HomePageState extends State<HomePage> {
                   alignment: Alignment.center,
                   child: GridView.builder(
                     physics: const NeverScrollableScrollPhysics(),
-                    padding: const EdgeInsets.only(left: 10, top: 15, right: 10, bottom: 15),
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    padding: const EdgeInsets.only(
+                        left: 8, top: 10, right: 8, bottom: 10),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       childAspectRatio: 1,
-                      crossAxisSpacing: 13,
-                      mainAxisSpacing: 20,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 15,
                     ),
                     itemCount: 4,
                     itemBuilder: (context, index) {
@@ -152,12 +155,32 @@ class _HomePageState extends State<HomePage> {
               backgroundColor: Col.amber,
             ),
             onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AllTestPage()));
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (_) => const AllTestPage()));
             },
             child: SizedBox(
               width: double.infinity,
               child: Text(
                 'Start Python Question Test',
+                textAlign: TextAlign.center,
+                style: style22600().copyWith(color: Col.blue),
+              ),
+            ),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.all(8),
+              shape: roundedAll(),
+              backgroundColor: Col.amber,
+            ),
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (_) => VideoApp()));
+            },
+            child: SizedBox(
+              width: double.infinity,
+              child: Text(
+                'Watch Python Videos',
                 textAlign: TextAlign.center,
                 style: style22600().copyWith(color: Col.blue),
               ),
